@@ -13,7 +13,12 @@ public class AddForce : MonoBehaviour {
         Vector3 curDir = wallPos - bollPos;
         GameData.Instance.firstDir = curDir;
 
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(curDir.x * 100, curDir.y * 100));
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(curDir.x * 10, curDir.y * 10));
+    }
+
+    private void Start()
+    {
+        
     }
 
 }

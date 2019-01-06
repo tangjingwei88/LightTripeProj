@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BollCollide : MonoBehaviour {
 
+    private void Start()
+    {
+        
+    }
+
     private Vector2 m_preVelocity = new Vector2(30,-50);//上一帧速度
     private Vector3 startPoint;
     private Vector3 endPoint;
@@ -31,6 +36,7 @@ public class BollCollide : MonoBehaviour {
 */
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.LogError("##" + collision.transform.tag);
         if (collision.transform.tag == "wall")
         {
             ContactPoint2D contactPoint = collision.contacts[0];
@@ -45,8 +51,18 @@ public class BollCollide : MonoBehaviour {
             //Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, newDir);
             //transform.rotation = rotation;
             //this.rigidbody2D. = newDir.normalized * m_preVelocity.x / m_preVelocity.normalized.x;
-            transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(newDir.x * 100,newDir.y * 100));
+            transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(newDir.x * 20, newDir.y * 20));
         }
+        else if (collision.transform.tag == "End")
+        {
+            Debug.LogError("game over");
+        }
+    }
+
+    public void OnClick()
+    {
+        Debug.LogError("OnClick");
+        transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
     }
 
 }

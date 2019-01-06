@@ -19,6 +19,7 @@ public class DragItem : MonoBehaviour,IDragHandler
             //中间有碰撞，不移动，回到原来位置
             transform.position = oriPos;
 		}
+
     }
 
 
@@ -26,6 +27,7 @@ public class DragItem : MonoBehaviour,IDragHandler
     {
         //拖拽移动图片
         SetDraggedPosition(eventData);
+
     }
 
     private void SetDraggedPosition(PointerEventData eventData)
