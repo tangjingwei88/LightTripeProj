@@ -51,7 +51,7 @@ public class BollCollide : MonoBehaviour {
             //Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, newDir);
             //transform.rotation = rotation;
             //this.rigidbody2D. = newDir.normalized * m_preVelocity.x / m_preVelocity.normalized.x;
-            transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(newDir.x * 20, newDir.y * 20));
+            transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(newDir.x * 30, newDir.y * 30));
         }
         else if (collision.transform.tag == "End")
         {
