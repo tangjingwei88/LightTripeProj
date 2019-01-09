@@ -62,7 +62,7 @@ public class BollCollide : MonoBehaviour {
     public void OnClick()
     {
         Debug.LogError("OnClick");
-        transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
+        transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
     }
 
 }
